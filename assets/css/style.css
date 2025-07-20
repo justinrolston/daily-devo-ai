@@ -1,96 +1,313 @@
 /* General Body & Typography */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    font-family: "Georgia", "Times New Roman", serif;
+    line-height: 1.8;
     margin: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #F8F6F3;
+    color: #2C1810;
+    font-size: 16px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Georgia", serif;
+    color: #2C1810;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: #5D4E37;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #5D4E37;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    text-align: left;
 }
 
 /* Header & Navigation */
 header {
-    background: #fff;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #ddd;
+    background: #FFFFFF;
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid #D4A574;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(44, 24, 16, 0.05);
 }
 
 header h1 a {
     text-decoration: none;
-    color: #333;
+    color: #2C1810;
+    font-size: 2rem;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+header h1 a:hover {
+    color: #D4A574;
 }
 
 nav a {
-    margin: 0 1rem;
-    color: #555;
+    margin: 0 1.5rem;
+    color: #5D4E37;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #D4A574;
 }
 
 /* Main Content */
 main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 750px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
 }
 
 .devotional {
-    background: #fff;
+    background: #FFFFFF;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(44, 24, 16, 0.08);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.devotional h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2C1810;
+    border-bottom: 2px solid #D4A574;
+    padding-bottom: 1rem;
+}
+
+.verse {
+    margin: 2rem 0 3rem 0;
     padding: 2rem;
+    background: rgba(248, 246, 243, 0.7);
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid rgba(212, 165, 116, 0.3);
 }
 
 .verse blockquote {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-style: italic;
-    border-left: 4px solid #ccc;
-    padding-left: 1rem;
+    font-family: "Georgia", serif;
+    border-left: 5px solid #D4A574;
+    padding-left: 1.5rem;
     margin: 0 0 1rem 0;
+    color: #2C1810;
+    line-height: 1.6;
+    quotes: """ """ "'" "'";
+}
+
+.verse blockquote::before {
+    content: open-quote;
+    font-size: 1.5em;
+    color: #D4A574;
+    margin-right: 0.1em;
+}
+
+.verse blockquote::after {
+    content: close-quote;
+    font-size: 1.5em;
+    color: #D4A574;
+    margin-left: 0.1em;
 }
 
 .verse cite {
     display: block;
     text-align: right;
-    font-weight: bold;
+    font-weight: 600;
+    color: #5D4E37;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    font-style: normal;
 }
 
 .devotional-content {
     margin-top: 2rem;
+    font-size: 1.05rem;
+}
+
+.devotional-content h2,
+.devotional-content h3,
+.devotional-content h4 {
+    color: #5D4E37;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.devotional-content strong {
+    color: #2C1810;
+    font-weight: 600;
+}
+
+.devotional-content em {
+    color: #8B7355;
+    font-style: italic;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
+    margin-top: 4rem;
+    padding: 2rem 1rem;
     font-size: 0.9rem;
-    color: #777;
+    color: #8B7355;
+    background: rgba(248, 246, 243, 0.5);
+    border-top: 1px solid rgba(212, 165, 116, 0.3);
+}
+
+/* Additional Typography Enhancements */
+blockquote {
+    border-left: 4px solid #D4A574;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #5D4E37;
+}
+
+/* Links within devotional content */
+.devotional-content a {
+    color: #D4A574;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.devotional-content a:hover {
+    color: #8B7355;
+}
+
+/* List styling within devotional content */
+.devotional-content ul,
+.devotional-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.devotional-content li {
+    margin-bottom: 0.5rem;
+    color: #2C1810;
+}
+
+/* Special styling for prayer sections or highlighted text */
+.prayer-prompt,
+.go-deeper {
+    background: rgba(212, 165, 116, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #D4A574;
+    margin: 2rem 0;
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+    
+    main {
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    
+    .devotional {
+        padding: 2rem;
+        border-radius: 8px;
+    }
+    
+    .verse {
+        padding: 1.5rem;
+    }
+    
+    .verse blockquote {
+        font-size: 1.2rem;
+    }
+    
+    h1 {
+        font-size: 1.9rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
     nav a {
         display: block;
         margin: 0.5rem 0;
+        font-size: 1rem;
     }
+    
+    header {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
     .devotional {
         padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .verse {
+        padding: 1rem;
+    }
+    
+    .verse blockquote {
+        font-size: 1.1rem;
+        padding-left: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.7rem;
     }
 }
 
 /* Print-friendly styles */
 @media print {
+    body {
+        background-color: white;
+        color: black;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
     header, footer, nav {
         display: none;
     }
+    
     main {
         max-width: 100%;
         margin: 0;
+        padding: 0;
+    }
+    
+    .devotional {
         box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+    
+    .verse {
+        background: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
     }
 }
