@@ -5,6 +5,9 @@ on:
     - cron: '0 9 * * *' # Runs at 9:00 AM UTC (4:00 AM EST)
   workflow_dispatch: # Allows manual triggering
 
+permissions:
+  contents: write # Grant write permissions to the GITHUB_TOKEN
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
