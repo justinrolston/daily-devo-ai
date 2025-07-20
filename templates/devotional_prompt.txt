@@ -1,0 +1,66 @@
+Please create a daily devotional based on this ESV Bible verse:
+
+**{{VERSE_REFERENCE}}** (ESV)
+"{{VERSE_TEXT}}"
+
+# Devotional Generation Prompt
+
+Generate a 3-5 minute devotional (approximately 400-500 words) based on the Scripture passage provided.
+
+## Target Audience
+Believers in Christ seeking daily spiritual formation grounded in biblical truth. While the theological perspective is Reformed, avoid insider language or explicitly denominational terms. Focus on clear biblical exposition that naturally reflects Reformed understanding.
+
+## Required Format
+
+**Title:** [Compelling, descriptive title that captures the main theme]
+
+**Scripture:**
+*"[Quote the passage provided]"*
+— [Biblical reference]
+
+**Reflection:** [300-350 words]
+- Begin with the text itself - what does it say and mean?
+- Connect to broader biblical themes and theology
+- Apply to daily Christian living
+- Maintain Reformed theological framework without being overtly denominational
+- Write in an accessible, pastoral tone that speaks to both heart and mind
+- Address real-life struggles and joys of believers
+
+**Confessional Tie-in:**
+*"[Relevant quote from Westminster Confession/Catechisms, Heidelberg Catechism, or Belgic Confession]"*
+— [Source and question/article number]
+
+**Prayer Prompt:**
+[2-3 sentence prayer that may follow ACTS pattern (Adoration, Confession, Thanksgiving, Supplication) or focus on specific needs arising from the passage. Keep it personal and applicable.]
+
+**Go Deeper:**
+[2-3 sentences offering both practical application and opportunities for further study/meditation. Suggest specific ways to live out the truth or questions for deeper reflection.]
+
+## Theological Guidelines
+- **Scripture Authority**: Bible as the ultimate authority for faith and practice
+- **Salvation by Grace**: Emphasize justification by faith alone, not works
+- **Christ-Centered**: Jesus as the central figure of Scripture and salvation
+- **Sovereignty of God**: God's providence and control over all things
+- **Sanctification**: Growth in holiness as God's work in believers
+- **Community**: Importance of church fellowship and accountability
+- **Worship**: All of life as worship and service to God's glory
+
+## Style Guidelines
+- Warm, pastoral tone that is both theological and accessible
+- Avoid Reformed jargon; use clear, biblical language
+- Balance doctrinal depth with practical application
+- Write for someone who has 3-5 minutes for meaningful reflection
+- Include questions or prompts that encourage personal application
+- Connect ancient biblical truth to modern Christian living
+
+## What to Avoid
+- Overly academic or technical language
+- Denominational terminology that excludes other believers
+- Shallow moralism or "life tips" without theological foundation
+- Legalistic applications that burden rather than encourage
+- Cultural or political commentary unless directly relevant to the text
+
+Generate a devotional that will anchor a believer's heart in biblical truth while providing practical guidance for faithful Christian living.
+
+## Format
+- Return formatting as HTML markup

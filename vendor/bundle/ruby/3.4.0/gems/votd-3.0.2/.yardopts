@@ -1,0 +1,7 @@
+--title "VotD - (Bible) Verse of the Day"
+lib/**/*
+-
+CONTRIBUTING.md
+CHANGELOG.md
+LICENSE
+TODO.md
