@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Load environment variables from .env file
+if [ -f .env ]; then
+  export $(cat .env | xargs)
+fi
+
+# Check if ANTHROPIC_API_KEY is set
+if [ -z "$ANTHROPIC_API_KEY" ]; then
+  echo "Error: ANTHROPIC_API_KEY is not set."
+  echo "Please create a .env file in the root of the project and add your API key:"
+  echo "ANTHROPIC_API_KEY=your-api-key"
+  exit 1
+fi
+
+# Run the Ruby script
+ruby scripts/generate_devotional.rb

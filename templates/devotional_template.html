@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <meta property="og:title" content="{{PAGE_TITLE}}" />
+    <meta property="og:description" content="{{VERSE_TEXT}}" />
+    <meta property="og:type" content="article" />
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">Daily Devotional</a></h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../today.html">Today's Devotional</a>
+            <a href="../archive.html">Archive</a>
+        </nav>
+    </header>
+    <main>
+        <article class="devotional">
+            <h1>{{DATE_FORMATTED}}</h1>
+            <div class="verse">
+                <blockquote>{{VERSE_TEXT}}</blockquote>
+                <cite>{{VERSE_REFERENCE}} (ESV)</cite>
+            </div>
+            <div class="devotional-content">
+                {{DEVOTIONAL_CONTENT}}
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Daily Devotional. All rights reserved.</p>
+    </footer>
+</body>
+</html>
