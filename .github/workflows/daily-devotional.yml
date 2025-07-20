@@ -25,7 +25,7 @@ jobs:
       - name: Generate Devotional
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: ruby scripts/generate_devotional.rb
+        run: bundle exec ruby scripts/generate_devotional.rb
 
       - name: Commit and Push Changes
         run: |
