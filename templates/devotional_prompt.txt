@@ -1,9 +1,11 @@
+# Daily Devotional Creation Prompt
+
 Please create a daily devotional based on this ESV Bible verse:
 
 **{{VERSE_REFERENCE}}** (ESV)
 "{{VERSE_TEXT}}"
 
-# Devotional Generation Prompt
+## Devotional Generation Instructions
 
 Generate a 3-5 minute devotional (approximately 400-500 words) based on the Scripture passage provided.
 
@@ -37,13 +39,15 @@ Believers in Christ seeking daily spiritual formation grounded in biblical truth
 [2-3 sentences offering both practical application and opportunities for further study/meditation. Suggest specific ways to live out the truth or questions for deeper reflection.]
 
 ## Theological Guidelines
-- **Scripture Authority**: Bible as the ultimate authority for faith and practice
-- **Salvation by Grace**: Emphasize justification by faith alone, not works
-- **Christ-Centered**: Jesus as the central figure of Scripture and salvation
-- **Sovereignty of God**: God's providence and control over all things
-- **Sanctification**: Growth in holiness as God's work in believers
-- **Community**: Importance of church fellowship and accountability
-- **Worship**: All of life as worship and service to God's glory
+- **Scripture's Authority & Inerrancy**: Bible as God's perfect, authoritative Word for all faith and practice
+- **Expository Foundation**: Begin with careful attention to what the text actually says in context
+- **Total Depravity**: Honest acknowledgment of sin's pervasive effects and our complete dependence on grace
+- **Justification by Faith Alone**: Imputed righteousness through Christ alone, not human works
+- **God's Sovereignty**: His absolute rule over salvation, providence, and all creation
+- **Progressive Sanctification**: Spirit-empowered growth in holiness as God's ongoing work
+- **Christ's Centrality**: Jesus as Prophet, Priest, and King throughout all Scripture
+- **Church's Role**: Means of grace through Word, sacraments, and fellowship
+- **Glory of God**: Ultimate purpose of salvation and Christian living
 
 ## Style Guidelines
 - Warm, pastoral tone that is both theological and accessible
@@ -52,6 +56,10 @@ Believers in Christ seeking daily spiritual formation grounded in biblical truth
 - Write for someone who has 3-5 minutes for meaningful reflection
 - Include questions or prompts that encourage personal application
 - Connect ancient biblical truth to modern Christian living
+- Begin reflection with "What does this text teach us?" before moving to application
+- Include brief attention to historical/cultural context when relevant
+- Address both believer's position in Christ AND their ongoing growth
+- Balance comfort for the afflicted with affliction for the comfortable
 
 ## What to Avoid
 - Overly academic or technical language
