@@ -2,6 +2,7 @@ require 'votd'
 require 'httparty'
 require 'json'
 require 'date'
+require 'dotenv/load'
 
 require 'kramdown'
 
@@ -13,14 +14,13 @@ MAX_TOKENS = 1500
 
 PROMPT_TEMPLATE_PATH = 'templates/devotional_prompt.txt'
 HTML_TEMPLATE_PATH = 'templates/devotional_template.html'
-TODAY_HTML_PATH = 'today.html'
-ARCHIVE_DIR = 'devotionals'
+DEV_HTML_PATH = 'dev.html'
 VERSES_DIR = 'verses'
 
 # Simple struct for verse data
 Verse = Struct.new(:text, :reference, :version)
 
-# --- Helper Functions ---
+# --- Helper Functions (reused from main script) ---
 
 def load_cached_verse(date)
   verse_file = File.join(VERSES_DIR, "#{date.strftime('%Y-%m-%d')}.json")
@@ -96,18 +96,6 @@ def get_or_fetch_verse(date = Date.today)
   nil
 end
 
-def get_previous_verse
-  # Fallback: read from yesterday's file if it exists
-  yesterday_file = File.join(ARCHIVE_DIR, "#{(Date.today - 1).strftime('%Y-%m-%d')}.html")
-  if File.exist?(yesterday_file)
-    content = File.read(yesterday_file)
-    verse_text = content.match(/<blockquote>(.*?)<\/blockquote>/m)[1]
-    verse_ref = content.match(/<cite>(.*?)<\/cite>/)[1]
-    return { text: verse_text, reference: verse_ref }
-  end
-  nil
-end
-
 def generate_devotional(verse_text, verse_reference)
   prompt_template = File.read(PROMPT_TEMPLATE_PATH)
   prompt = prompt_template.gsub('{{VERSE_REFERENCE}}', verse_reference)
@@ -146,7 +134,9 @@ def process_template(template_path, replacements)
   template
 end
 
-# --- Main Script Logic ---
+# --- Development Script Logic ---
+
+puts "=== Development Devotional Generator ==="
 
 # 1. Get Verse (using cache-first approach)
 verse = get_or_fetch_verse
@@ -155,44 +145,28 @@ unless verse
   exit 1
 end
 
-puts "Verse for today: #{verse.reference} - #{verse.text}"
+puts "Verse for development: #{verse.reference} - #{verse.text}"
 
 # 2. Generate Devotional
+puts "Generating devotional content..."
 devotional_content = generate_devotional(verse.text, verse.reference)
 unless devotional_content
   puts "Devotional generation failed. Using verse only."
   devotional_content = "<p>We apologize, but we couldn't generate the devotional content for today. Please reflect on the verse below.</p>"
 end
 
-# 3. Move previous today.html to archive
-if File.exist?(TODAY_HTML_PATH)
-  yesterday_date = (Date.today - 1).strftime('%Y-%m-%d')
-  archive_path = File.join(ARCHIVE_DIR, "#{yesterday_date}.html")
-  File.rename(TODAY_HTML_PATH, archive_path)
-  puts "Archived yesterday's devotional to #{archive_path}"
-end
-
-# 4. Create new devotional HTML
+# 3. Create development HTML
 today_date_formatted = Date.today.strftime('%B %d, %Y')
 replacements = {
-  'PAGE_TITLE' => "Devotional for #{today_date_formatted}",
+  'PAGE_TITLE' => "Development Devotional for #{today_date_formatted}",
   'DATE_FORMATTED' => today_date_formatted,
   'VERSE_REFERENCE' => verse.reference,
   'VERSE_TEXT' => verse.text,
   'DEVOTIONAL_CONTENT' => Kramdown::Document.new(devotional_content).to_html
 }
 
-# Generate dated file for the archive
-dated_html_content = process_template(HTML_TEMPLATE_PATH, replacements)
-dated_html_path = File.join(ARCHIVE_DIR, "#{Date.today.strftime('%Y-%m-%d')}.html")
-File.write(dated_html_path, dated_html_content)
-puts "Created dated devotional: #{dated_html_path}"
+dev_html_content = process_template(HTML_TEMPLATE_PATH, replacements)
+File.write(DEV_HTML_PATH, dev_html_content)
+puts "Created development devotional: #{DEV_HTML_PATH}"
 
-# Generate today.html (a copy of the dated one)
-File.write(TODAY_HTML_PATH, dated_html_content)
-puts "Created today.html"
-
-# 5. Update index.html (simple version: just links to today.html)
-# A more complex implementation could inject the content directly.
-
-puts "Devotional generation complete."
+puts "=== Development devotional generation complete ==="
