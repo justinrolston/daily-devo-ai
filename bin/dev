@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Development devotional generator
+# Usage: ./bin/dev
+
+echo "🚀 Generating development devotional..."
+bundle exec ruby scripts/generate_dev_devotional.rb
+echo "✅ Development devotional created at dev.html"
