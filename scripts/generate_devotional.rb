@@ -143,7 +143,7 @@ puts "Verse for today: #{verse.reference} - #{verse.text}"
 devotional_content = generate_devotional(verse.text, verse.reference)
 unless devotional_content
   puts "Devotional generation failed. Using verse only."
-  devotional_content = "<p>We apologize, but we couldn't generate the devotional content for today. Please reflect on the verse below.</p>"
+  devotional_content = "<p>We apologize, but we couldn't find the devotional content for today. Please reflect on the verse above.</p>"
 end
 
 # 3. Create new devotional HTML
