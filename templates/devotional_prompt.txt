@@ -14,7 +14,7 @@ Believers in Christ seeking daily spiritual formation grounded in biblical truth
 
 ## Required Format
 
-**Title:** [Compelling, descriptive title that captures the main theme]
+**Title:** [Compelling, descriptive title that captures the main theme - plain text only, no HTML tags]
 
 **Scripture:**
 *"[Quote the passage provided]"*
@@ -71,4 +71,6 @@ Believers in Christ seeking daily spiritual formation grounded in biblical truth
 Generate a devotional that will anchor a believer's heart in biblical truth while providing practical guidance for faithful Christian living.
 
 ## Format
-- Return formatting as HTML markup
+- Return formatting as Markdown
+- Do NOT use HTML tags (especially avoid <h1>, <h2>, etc. tags)
+- Use Markdown syntax for formatting (## for headings, **bold**, *italic*, etc.)
