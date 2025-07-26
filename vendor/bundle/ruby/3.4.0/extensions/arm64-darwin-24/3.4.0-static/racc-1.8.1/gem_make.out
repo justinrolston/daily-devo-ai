@@ -1,0 +1,19 @@
+current directory: /Users/justinrolston/Code/daily-devo-ai/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/justinrolston/.rubies/ruby-3.4.1/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/justinrolston/Code/daily-devo-ai/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250725-43822-vs8g8 sitelibdir\=./.gem.20250725-43822-vs8g8 clean
+
+current directory: /Users/justinrolston/Code/daily-devo-ai/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250725-43822-vs8g8 sitelibdir\=./.gem.20250725-43822-vs8g8
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: search path '/opt/homebrew/opt/gdbm/lib' not found
+
+current directory: /Users/justinrolston/Code/daily-devo-ai/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250725-43822-vs8g8 sitelibdir\=./.gem.20250725-43822-vs8g8 install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20250725-43822-vs8g8/racc
+
+current directory: /Users/justinrolston/Code/daily-devo-ai/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250725-43822-vs8g8 sitelibdir\=./.gem.20250725-43822-vs8g8 clean

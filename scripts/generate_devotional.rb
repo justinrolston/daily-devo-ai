@@ -85,28 +85,10 @@ def get_or_fetch_verse(date = Date.today)
     return verse
   end
   
-  # If API failed, try yesterday's cached verse
-  puts "API fetch failed. Trying yesterday's cached verse."
-  yesterday_cached = load_cached_verse(date - 1)
-  if yesterday_cached
-    puts "Using yesterday's cached verse as fallback"
-    return Verse.new(yesterday_cached[:text], yesterday_cached[:reference], yesterday_cached[:version])
-  end
   
   nil
 end
 
-def get_previous_verse
-  # Fallback: read from yesterday's file if it exists
-  yesterday_file = File.join(ARCHIVE_DIR, "#{(Date.today - 1).strftime('%Y-%m-%d')}.html")
-  if File.exist?(yesterday_file)
-    content = File.read(yesterday_file)
-    verse_text = content.match(/<blockquote>(.*?)<\/blockquote>/m)[1]
-    verse_ref = content.match(/<cite>(.*?)<\/cite>/)[1]
-    return { text: verse_text, reference: verse_ref }
-  end
-  nil
-end
 
 def generate_devotional(verse_text, verse_reference)
   prompt_template = File.read(PROMPT_TEMPLATE_PATH)
@@ -161,18 +143,10 @@ puts "Verse for today: #{verse.reference} - #{verse.text}"
 devotional_content = generate_devotional(verse.text, verse.reference)
 unless devotional_content
   puts "Devotional generation failed. Using verse only."
-  devotional_content = "<p>We apologize, but we couldn't generate the devotional content for today. Please reflect on the verse below.</p>"
+  devotional_content = "<p>We apologize, but we couldn't find the devotional content for today. Please reflect on the verse above.</p>"
 end
 
-# 3. Move previous today.html to archive
-if File.exist?(TODAY_HTML_PATH)
-  yesterday_date = (Date.today - 1).strftime('%Y-%m-%d')
-  archive_path = File.join(ARCHIVE_DIR, "#{yesterday_date}.html")
-  File.rename(TODAY_HTML_PATH, archive_path)
-  puts "Archived yesterday's devotional to #{archive_path}"
-end
-
-# 4. Create new devotional HTML
+# 3. Create new devotional HTML
 today_date_formatted = Date.today.strftime('%B %d, %Y')
 replacements = {
   'PAGE_TITLE' => "Devotional for #{today_date_formatted}",
