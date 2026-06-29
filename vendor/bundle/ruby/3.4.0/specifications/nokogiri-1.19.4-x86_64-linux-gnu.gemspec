@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
-# stub: nokogiri 1.19.3 x86_64-linux-gnu lib
+# stub: nokogiri 1.19.4 x86_64-linux-gnu lib
 
 Gem::Specification.new do |s|
   s.name = "nokogiri".freeze
-  s.version = "1.19.3".freeze
+  s.version = "1.19.4".freeze
   s.platform = "x86_64-linux-gnu".freeze
 
   s.required_rubygems_version = Gem::Requirement.new(">= 3.3.22".freeze) if s.respond_to? :required_rubygems_version=
