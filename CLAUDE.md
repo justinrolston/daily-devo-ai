@@ -58,7 +58,8 @@ This is a Ruby-based daily devotional generator that automates content creation 
 - `ANTHROPIC_API_KEY` - Required secret for Claude API access
 
 **API Configuration**
-- Model: `claude-sonnet-4-20250514`
+- Model: `claude-sonnet-5` (the prior `claude-sonnet-4-20250514` was retired 2026-06-15 and now 404s)
+- Thinking: disabled (Sonnet 5 enables adaptive thinking by default, which would share the Max tokens budget and truncate output)
 - Max tokens: 1500
 - API URL: `https://api.anthropic.com/v1/messages`
 
