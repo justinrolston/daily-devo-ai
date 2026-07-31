@@ -9,7 +9,7 @@ require 'kramdown'
 # --- Configuration ---
 ANTHROPIC_API_KEY = ENV['ANTHROPIC_API_KEY']
 API_URL = 'https://api.anthropic.com/v1/messages'
-MODEL = 'claude-sonnet-4-20250514'
+MODEL = 'claude-sonnet-5'
 MAX_TOKENS = 1500
 
 PROMPT_TEMPLATE_PATH = 'templates/devotional_prompt.txt'
@@ -110,6 +110,10 @@ def generate_devotional(verse_text, verse_reference)
   body = {
     model: MODEL,
     max_tokens: MAX_TOKENS,
+    # Sonnet 5 turns adaptive thinking on by default, and thinking shares the
+    # MAX_TOKENS budget with the response — which would truncate the devotional.
+    # Disable it to keep the full budget for output, matching prior behavior.
+    thinking: { type: 'disabled' },
     messages: [{ role: 'user', content: prompt }]
   }.to_json
 
